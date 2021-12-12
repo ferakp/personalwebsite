@@ -1,8 +1,9 @@
 import { createContext } from "react";
-import {appState} from './states';
+import {appState} from './state';
 
-export const context = createContext(appState);
+export let context;
 
 export function getContext() {
+  if(!context) context = createContext(appState);
   return context;
 }
