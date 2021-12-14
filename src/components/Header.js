@@ -4,23 +4,14 @@ import { getContext } from "../states/context";
 export class Header extends React.Component {
   static contextType = getContext();
 
-  // Context shortcuts
-  header;
-  navigationBar;
-
   render() {
-    this.header = this.context.appState.app.header;
-    this.navigationBar = this.header.navigationBar;
+    this.header = this.context.app.header;
 
     return(
       <React.Fragment>
-        <p>Header</p>
+        {Object.entries(this.header.navigationBar).map(e => (<p key={e[0]}>{e[1]["name"]}</p>))}
       </React.Fragment>
     )
   }
-
-  change = () => {
-
-  };
 }
 
