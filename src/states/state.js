@@ -1,39 +1,68 @@
 // Default stored application state
 export const initialState = {
   app: {
-    uiSettings: {},
+    uiSettings: {
+      appScale: "Medium"
+    },
     backendApi: {},
     header: {
       navigationBar: {
         home: {
           name: "Feridun Akpinar",
           href: "/",
-          isDisabled: false
+          isDisabled: false,
+          faIconName: "",
         },
         code: {
           name: "Code",
           href: "/code",
-          isDisabled: false
+          isDisabled: false,
+          faIconName: ""
         },
         projects: {
           name: "Projects",
           href: "/projects",
-          isDisabled: false
+          isDisabled: false,
+          faIconName: ""
         },
         blogs: {
-          name: "Blogs",
+          name: "Blogs & Research",
           href: "/blogs",
-          isDisabled: false
+          isDisabled: false,
+          faIconName: ""
         },
         volunteering: {
-          name: "Volunteering",
+          name: "Volunteering & Contributions",
           href: "/volunteering",
-          isDisabled: false
+          isDisabled: false,
+          faIconName: ""
         },
         aboutme: {
           name: "About me",
           href: "/aboutme",
-          isDisabled: false
+          isDisabled: false,
+          faIconName: ""
+        },
+        linkedIn: {
+          name: "",
+          href: "https://linkedin.com/in/akpinarferidun92/",
+          isDisabled: false,
+          faIconName: "fab linkedin",
+          type: "icon"
+        },
+        github: {
+          name: "",
+          href: "https://github.com/ferakp",
+          isDisabled: false,
+          faIconName: "fab github",
+          type: "icon"
+        },
+        email: {
+          name: "",
+          href: "feridun.akpinar@gmail.com",
+          isDisabled: false,
+          faIconName: "fas envelope",
+          type: "icon"
         }
       },
     },

@@ -5,7 +5,10 @@ import { getContext } from "./states/context";
 import { initialState, reducer } from "./states/state";
 import { Routes, Route } from "react-router-dom";
 import { Projects } from "./pages/Projects";
-import { useNavigate } from "react-router";
+import { useNavigate, useLocation } from "react-router";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { fas } from "@fortawesome/free-solid-svg-icons";
 import "./App.css";
 
 class App extends React.Component {
@@ -14,7 +17,7 @@ class App extends React.Component {
   render() {
     return (
       <App.AppContext.Provider value={{ app: this.props.state.app, dispatch: this.props.dispatch }}>
-        <Header />
+        <Header {...this.props} />
         <Routes>
           <Route path="/" element={<Home {...this.props} />} />
           <Route path="projects" element={<Projects {...this.props} />} />
@@ -25,9 +28,12 @@ class App extends React.Component {
 }
 
 const AppWrapper = () => {
+  library.add(fab);
+  library.add(fas);
   const [state, dispatch] = useReducer(reducer, initialState);
   let navigate = useNavigate();
-  return <App navigate={navigate} state={state} dispatch={dispatch} />;
+  let location = useLocation();
+  return <App location={location} navigate={navigate} state={state} dispatch={dispatch} />;
 };
 
 export default AppWrapper;
