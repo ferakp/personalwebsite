@@ -1,5 +1,6 @@
 import React from "react";
 import { getContext } from "../states/context";
+import { NavigationBar } from "./NavigationBar";
 
 export class Header extends React.Component {
   static contextType = getContext();
@@ -9,7 +10,7 @@ export class Header extends React.Component {
 
     return(
       <React.Fragment>
-        {Object.entries(this.header.navigationBar).map(e => (<p key={e[0]}>{e[1]["name"]}</p>))}
+        <NavigationBar {...this.props}/>
       </React.Fragment>
     )
   }
