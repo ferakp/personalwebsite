@@ -1,6 +1,6 @@
 import React from "react";
 import { getContext } from "../states/context";
-import { NavigationBar } from "./NavigationBar";
+import { NavigationBar } from "./navigation-bar/NavigationBar";
 
 export class Header extends React.Component {
   static contextType = getContext();
