@@ -1,6 +1,6 @@
 import React, { useReducer } from "react";
 import { Home } from "./pages/Home";
-import { Header } from "./components/Header";
+import { Header } from "./components/header/Header";
 import { getContext } from "./states/context";
 import { initialState, reducer } from "./states/state";
 import { Routes, Route } from "react-router-dom";

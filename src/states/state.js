@@ -4,6 +4,11 @@ export const initialState = {
     uiSettings: {
       appScale: "Medium"
     },
+    profile: {
+      email: "Feridun.Akpinar@gmail.com",
+      github: "ferakp",
+      linkedin: "akpinarferidun92"
+    },
     backendApi: {},
     header: {
       navigationBar: {
