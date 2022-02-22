@@ -5,20 +5,19 @@ import { getContext } from "../states/context";
 export class Projects extends React.Component {
   static contextType = getContext();
 
-  constructor(props) {
-    super(props);
-    this.state = { };
-  }
-
   componentDidMount() {
     this.initializeComponent();
   }
 
   initializeComponent() {
-    this.setState({ page: this.context.app.pages.home });
+    this.updateLastVisitTime();
   }
 
   render() {
-    return <p></p>;
+    return <p>Projects</p>;
+  }
+
+  updateLastVisitTime() {
+    this.context.dispatch({ type: "PAGE_UPDATED", payload: { pageName: "code" } });
   }
 }
