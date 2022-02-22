@@ -32,13 +32,13 @@ export const initialState = {
         },
         blogs: {
           name: "Blogs & Research",
-          href: "/blogs",
+          href: "/blogsresearch",
           isDisabled: false,
           faIconName: ""
         },
         volunteering: {
           name: "Volunteering & Contributions",
-          href: "/volunteering",
+          href: "/volunteeringcontributions",
           isDisabled: false,
           faIconName: ""
         },
@@ -81,13 +81,13 @@ export const initialState = {
       projects: {
         lastUpdated: "N/A",
       },
-      blogs: {
+      blogsResearch: {
         lastUpdated: "N/A",
       },
-      volunteering: {
+      volunteeringContributions: {
         lastUpdated: "N/A",
       },
-      aboutme: {
+      aboutMe: {
         lastUpdated: "N/A",
       }
     },
