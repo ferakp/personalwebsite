@@ -11,6 +11,7 @@ export class NavigationBar extends React.Component {
   constructor(props) {
     super(props);
     this.wrapperRef = React.createRef();
+    window.addEventListener('resize', () => this.setState({mobileMode: false}));
   }
 
   barClicked = () => {
