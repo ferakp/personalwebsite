@@ -21,7 +21,7 @@ export class ProfileBar extends React.Component {
     return (
       <div className={styles.container}>
         <div className={styles.imageContainer}>
-          <img src="./profilephoto.jpeg" />
+          <img src="./profilephoto.jpg" />
         </div>
         {Object.entries(this.profile).map((e) => {
           return (
