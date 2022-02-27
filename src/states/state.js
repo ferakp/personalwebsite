@@ -5,9 +5,9 @@ export const initialState = {
       appScale: "Medium"
     },
     profile: {
-      email: "Feridun.Akpinar@gmail.com",
-      github: "ferakp",
-      linkedin: "akpinarferidun92"
+      email: ["Feridun.Akpinar@gmail.com", "Contact email address"],
+      github: ["ferakp", "Github username"],
+      linkedIn: ["akpinarferidun92", "Linkedin username"],
     },
     backendApi: {},
     header: {
@@ -67,7 +67,8 @@ export const initialState = {
           href: "feridun.akpinar@gmail.com",
           isDisabled: false,
           faIconName: "fas envelope",
-          type: "icon"
+          type: "icon",
+          tooltip: "Contact form"
         }
       },
     },
