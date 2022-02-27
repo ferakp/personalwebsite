@@ -28,12 +28,12 @@ export class ProfileBar extends React.Component {
             <React.Fragment>
               <a className={styles.link} key={e[0] + "-"}>
                 <span className={styles.iconContainer}>
-                  <FontAwesomeIcon className={styles.itemIcon} icon={icons.get(e[0])} />
+                  <FontAwesomeIcon className={styles.itemIcon} icon={icons.get(e[0].toLowerCase())} />
                 </span>
                 <span className={styles.itemText}>{e[0].charAt(0).toUpperCase() + e[0].slice(1)}</span>
               </a>
-              <a className={styles.linkContent} target="_blank" href={links.get(e[0])}>
-                {e[1]}
+              <a className={styles.linkContent} target="_blank" href={links.get(e[0])} data-tip={e[1][1]}>
+                {e[1][0]}
               </a>
             </React.Fragment>
           );

@@ -11,7 +11,7 @@ export class NavigationBar extends React.Component {
   constructor(props) {
     super(props);
     this.wrapperRef = React.createRef();
-    window.addEventListener('resize', () => this.setState({mobileMode: false}));
+    window.addEventListener('resize', () => this.setState({ mobileMode: false }));
   }
 
   barClicked = () => {
@@ -101,7 +101,10 @@ export class NavigationBar extends React.Component {
                     return (
                       <div className={`${styles.iconLink}`} key={"navigationBarItem" + element[0]}>
                         <p onClick={() => this.changePage(element[1].href || "N/A")}>
-                          <FontAwesomeIcon icon={element[1].faIconName.split(" ") || ["fas", "question"]} />
+                          {element[0] === "email" ?
+                            <FontAwesomeIcon icon={element[1].faIconName.split(" ") || ["fas", "question"]} data-tip={element[1].tooltip} />
+                            :
+                            <FontAwesomeIcon icon={element[1].faIconName.split(" ") || ["fas", "question"]} />}
                         </p>
                       </div>
                     );

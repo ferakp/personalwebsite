@@ -13,6 +13,7 @@ import { useNavigate, useLocation } from "react-router";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
+import ReactTooltip from 'react-tooltip';
 import "./App.css";
 
 class App extends React.Component {
@@ -30,6 +31,7 @@ class App extends React.Component {
           <Route path="volunteeringcontributions" element={<VolunteeringContributions {...this.props} />} />
           <Route path="aboutme" element={<AboutMe {...this.props} />} />
         </Routes>
+        <ReactTooltip />
       </App.AppContext.Provider>
     );
   }
