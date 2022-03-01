@@ -2,7 +2,7 @@
 export const initialState = {
   app: {
     uiSettings: {
-      appScale: "Medium"
+      appScale: "Medium",
     },
     profile: {
       email: ["Feridun.Akpinar@gmail.com", "Contact email address"],
@@ -22,45 +22,45 @@ export const initialState = {
           name: "Code",
           href: "/code",
           isDisabled: false,
-          faIconName: ""
+          faIconName: "",
         },
         projects: {
           name: "Projects",
           href: "/projects",
           isDisabled: false,
-          faIconName: ""
+          faIconName: "",
         },
         blogs: {
           name: "Blogs & Research",
           href: "/blogsresearch",
           isDisabled: false,
-          faIconName: ""
+          faIconName: "",
         },
         volunteering: {
           name: "Volunteering & Contributions",
           href: "/volunteeringcontributions",
           isDisabled: false,
-          faIconName: ""
+          faIconName: "",
         },
         aboutme: {
           name: "About me",
           href: "/aboutme",
           isDisabled: false,
-          faIconName: ""
+          faIconName: "",
         },
         linkedIn: {
           name: "",
           href: "https://linkedin.com/in/akpinarferidun92/",
           isDisabled: false,
           faIconName: "fab linkedin",
-          type: "icon"
+          type: "icon",
         },
         github: {
           name: "",
           href: "https://github.com/ferakp",
           isDisabled: false,
           faIconName: "fab github",
-          type: "icon"
+          type: "icon",
         },
         email: {
           name: "",
@@ -68,8 +68,8 @@ export const initialState = {
           isDisabled: false,
           faIconName: "fas envelope",
           type: "icon",
-          tooltip: "Contact form"
-        }
+          tooltip: "Contact form",
+        },
       },
     },
     pages: {
@@ -90,17 +90,33 @@ export const initialState = {
       },
       aboutMe: {
         lastUpdated: "N/A",
-      }
+      },
+    },
+    timeline: {
+      posts: [
+        {
+          origin: "Code",
+          originColor: "black",
+          originIcon: "fas code",
+          imgUrl: "./profilephoto.jpg",
+          title: "A new package has been released",
+          text: `A new package has been released for NPM. This is a test text and it has several purposes. First of all, it makes sure that the page prints
+          text.
+          `,
+          releaseTime: new Date(),
+          href: "#"
+        },
+      ],
     },
   },
 };
 
 export const reducer = (state, action) => {
-  let newState = {...state};
+  let newState = { ...state };
   switch (action.type) {
-    case 'PAGE_UPDATED':
+    case "PAGE_UPDATED":
       let page = newState.app.pages[action.payload.pageName];
-      if(page) page.lastUpdated = new Date().toString();
+      if (page) page.lastUpdated = new Date().toString();
       break;
     default:
       throw new Error();
