@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    border-radius: 6%;
+}
+
+
+
+@media only screen and (min-width: 1021px) {
+
+}

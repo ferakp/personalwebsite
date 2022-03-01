@@ -2,6 +2,7 @@ import React from "react";
 import { getContext } from "../states/context";
 import styles from "./Home.module.css";
 import { ProfileBar } from "../components/profile-bar/ProfileBar";
+import { NewsList } from "../components/news-list/NewsList";
 
 export class Home extends React.Component {
   static contextType = getContext();
@@ -12,7 +13,9 @@ export class Home extends React.Component {
         <div>
           <ProfileBar {...this.props} />
         </div>
-        <div className={styles.contentContainer}></div>
+        <div className={styles.contentContainer}>
+          <NewsList {...this.props} />
+        </div>
       </div>
     );
   }
@@ -26,6 +29,9 @@ export class Home extends React.Component {
   }
 
   updateLastVisitTime() {
-    this.context.dispatch({ type: "PAGE_UPDATED", payload: { pageName: "home" } });
+    this.context.dispatch({
+      type: "PAGE_UPDATED",
+      payload: { pageName: "home" },
+    });
   }
 }

@@ -7,6 +7,7 @@
     margin-left: 15px;
     margin-top: 65px;
     border-radius: 3%;
+    border: 1px solid rgba(99, 98, 98, 0.308);
 }
 
 .imageContainer {
