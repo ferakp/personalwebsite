@@ -25,7 +25,7 @@ export class ProfileBar extends React.Component {
         </div>
         {Object.entries(this.profile).map((e) => {
           return (
-            <React.Fragment>
+            <div className={styles.linkContainer}>
               <a className={styles.link} key={e[0] + "-"}>
                 <span className={styles.iconContainer}>
                   <FontAwesomeIcon className={styles.itemIcon} icon={icons.get(e[0].toLowerCase())} />
@@ -35,7 +35,7 @@ export class ProfileBar extends React.Component {
               <a className={styles.linkContent} target="_blank" href={links.get(e[0])} data-tip={e[1][1]}>
                 {e[1][0]}
               </a>
-            </React.Fragment>
+            </div>
           );
         })}
       </div>

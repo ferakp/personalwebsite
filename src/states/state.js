@@ -17,12 +17,14 @@ export const initialState = {
           href: "/",
           isDisabled: false,
           faIconName: "",
+          
         },
         code: {
           name: "Code",
           href: "/code",
           isDisabled: false,
-          faIconName: ""
+          faIconName: "",
+          cardText: "As a passionate software developer I love to share my work. See my "
         },
         projects: {
           name: "Projects",
