@@ -21,7 +21,7 @@ export class Post extends React.Component {
             icon={post.originIcon.split(" ")}
           />
           <p className={styles.origin} style={{ color: post.originColor }}>
-            {post.origin}
+            {post.title}
           </p>
         </div>
         <p className={styles.releaseTime}>

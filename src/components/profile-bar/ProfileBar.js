@@ -10,12 +10,10 @@ export class ProfileBar extends React.Component {
     this.profile = this.context.app.profile;
 
     let icons = new Map();
-    icons.set("linkedin", ["fab", "linkedin"]);
     icons.set("github", ["fab", "github"]);
     icons.set("email", ["fas", "envelope"]);
 
     let links = new Map();
-    links.set("linkedin", "https://linkedin.com/in/" + this.profile["linkedin"]);
     links.set("github", "https://github.com/" + this.profile["github"]);
 
     return (
