@@ -14,7 +14,7 @@ export class ProfileBar extends React.Component {
     icons.set("email", ["fas", "envelope"]);
 
     let links = new Map();
-    links.set("github", "https://github.com/" + this.profile["github"]);
+    links.set("github", "https://github.com/" + this.profile["github"][0]);
 
     return (
       <div className={styles.container}>
