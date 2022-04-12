@@ -6,8 +6,7 @@ export const initialState = {
     },
     profile: {
       email: ["Feridun.Akpinar@gmail.com", "Contact email address"],
-      github: ["ferakp", "Github username"],
-      linkedIn: ["akpinarferidun92", "Linkedin username"],
+      github: ["ferakp", "Github username"]
     },
     backendApi: {},
     header: {
@@ -47,13 +46,6 @@ export const initialState = {
           href: "/aboutme",
           isDisabled: false,
           faIconName: "",
-        },
-        linkedIn: {
-          name: "",
-          href: "https://linkedin.com/in/akpinarferidun92/",
-          isDisabled: false,
-          faIconName: "fab linkedin",
-          type: "icon",
         },
         github: {
           name: "",
@@ -99,9 +91,8 @@ export const initialState = {
           originColor: "black",
           originIcon: "fas code",
           imgUrl: "./profilephoto.jpg",
-          title: "A new package has been released",
-          text: `A new package has been released for NPM. This is a test text and it has several purposes. First of all, it makes sure that the page prints
-          text.
+          title: "Under development",
+          text: `......
           `,
           releaseTime: new Date(),
           href: "#"
