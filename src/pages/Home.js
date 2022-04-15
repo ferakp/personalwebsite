@@ -1,7 +1,6 @@
 import React from "react";
 import { getContext } from "../states/context";
 import styles from "./Home.module.css";
-import { ProfileBar } from "../components/profile-bar/ProfileBar";
 import { NewsList } from "../components/news-list/NewsList";
 
 export class Home extends React.Component {
@@ -10,11 +9,11 @@ export class Home extends React.Component {
   render() {
     return (
       <div className={styles.container}>
-        <div>
-          <ProfileBar {...this.props} />
-        </div>
         <div className={styles.contentContainer}>
           <NewsList {...this.props} />
+        </div>
+        <div className={styles.messageContainer}>
+          <p>Welcome to my homepage</p>
         </div>
       </div>
     );
