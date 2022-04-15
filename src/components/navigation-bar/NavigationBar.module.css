@@ -13,7 +13,9 @@
 
 .container.mobileMode {
   overflow: visible;
-  max-height: 300px;
+  background-color: rgba(0, 0, 0, 0.815) !important;
+  width: 100%;
+  max-height: none;
 }
 
 .container p {

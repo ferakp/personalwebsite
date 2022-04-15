@@ -4,8 +4,8 @@
     flex-direction: column;
     background-color: white;
     min-height: 250px;
-    width: 550px;
-    margin-left: 9%;
+    max-width: 550px;
+    margin-left: 15px;
     margin-bottom: 10px;
     border-radius: 3%;
     padding: 10px;
@@ -46,7 +46,7 @@
 }
 
 .imageContainer {
-    height: 250px;
+    max-height: 250px;
     margin-top: 10px;
 }
 
@@ -64,3 +64,8 @@
 }
 
 
+@media only screen and (max-width: 1020px) {
+    .container {
+        margin: 15px;
+    }
+}
