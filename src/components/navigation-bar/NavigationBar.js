@@ -21,11 +21,16 @@ export class NavigationBar extends React.Component {
   };
 
   changePage = (href) => {
+    console.log("called");
+    // Close navbar if mobileMode is on
     if (this.state.mobileMode) this.barClicked();
+    // For navbar links
     if (!href.includes("@") && href !== "N/A" && !href.includes("http"))
       this.props.navigate(href);
+    // For Github
     else if (href.includes("http")) {
       window.open(href, "_blank");
+      // For email
     } else if (href.includes("@")) {
       navigator.clipboard.writeText(href);
     }
@@ -74,7 +79,7 @@ export class NavigationBar extends React.Component {
                             ? styles.activeUrl
                             : ""
                         }`}
-                        key={"itemHeader" + element[0] + index}
+                        key={element[1].href + "item" + index}
                         onClick={() =>
                           this.changePage(element[1].href || "N/A")
                         }
@@ -87,8 +92,9 @@ export class NavigationBar extends React.Component {
               <div
                 className={`${styles.iconLink} ${styles.barIcon}`}
                 key={"navigationBarItem bars"}
+                onClick={() => this.barClicked()}
               >
-                <p onClick={() => this.barClicked()}>
+                <p>
                   <FontAwesomeIcon icon={["fa", "bars"]} />
                 </p>
               </div>
@@ -106,12 +112,9 @@ export class NavigationBar extends React.Component {
                           : ""
                       }`}
                       key={"item" + element[0]}
+                      onClick={() => this.changePage(element[1].href || "N/A")}
                     >
-                      <p
-                        onClick={() =>
-                          this.changePage(element[1].href || "N/A")
-                        }
-                      >
+                      <p>
                         {index === 0 && this.state.mobileMode
                           ? "Homepage"
                           : element[1].name}
@@ -132,12 +135,11 @@ export class NavigationBar extends React.Component {
                       <div
                         className={`${styles.iconLink}`}
                         key={"navigationBarItem" + element[0]}
+                        onClick={() =>
+                          this.changePage(element[1].href || "N/A")
+                        }
                       >
-                        <p
-                          onClick={() =>
-                            this.changePage(element[1].href || "N/A")
-                          }
-                        >
+                        <p>
                           {element[0] === "email" ? (
                             <FontAwesomeIcon
                               icon={
