@@ -11,7 +11,9 @@ export class NavigationBar extends React.Component {
   constructor(props) {
     super(props);
     this.wrapperRef = React.createRef();
-    window.addEventListener('resize', () => this.setState({ mobileMode: false }));
+    window.addEventListener("resize", () =>
+      this.setState({ mobileMode: false })
+    );
   }
 
   barClicked = () => {
@@ -20,7 +22,8 @@ export class NavigationBar extends React.Component {
 
   changePage = (href) => {
     if (this.state.mobileMode) this.barClicked();
-    if (!href.includes("@") && href !== "N/A" && !href.includes("http")) this.props.navigate(href);
+    if (!href.includes("@") && href !== "N/A" && !href.includes("http"))
+      this.props.navigate(href);
     else if (href.includes("http")) {
       window.open(href, "_blank");
     } else if (href.includes("@")) {
@@ -52,7 +55,12 @@ export class NavigationBar extends React.Component {
     this.getActiveUrl();
     return (
       <React.Fragment>
-        <div className={`${styles.container} ${this.state.mobileMode ? styles.mobileMode : ""}`} ref={this.wrapperRef}>
+        <div
+          className={`${styles.container} ${
+            this.state.mobileMode ? styles.mobileMode : ""
+          }`}
+          ref={this.wrapperRef}
+        >
           {[
             <div className={styles.mobileMenuHeader} key={"mobileMenuHeader"}>
               {Object.entries(this.navigationBar)
@@ -61,15 +69,25 @@ export class NavigationBar extends React.Component {
                   if (element[1].href === "/")
                     return (
                       <div
-                        className={`${styles.item} ${element[1].href === this.activeUrl ? styles.activeUrl : ""}`}
+                        className={`${styles.item} ${
+                          element[1].href === this.activeUrl
+                            ? styles.activeUrl
+                            : ""
+                        }`}
                         key={"itemHeader" + element[0] + index}
+                        onClick={() =>
+                          this.changePage(element[1].href || "N/A")
+                        }
                       >
-                        <p onClick={() => this.changePage(element[1].href || "N/A")}>{element[1].name}</p>
+                        <p>{element[1].name}</p>
                       </div>
                     );
                   else return undefined;
                 })}
-              <div className={`${styles.iconLink} ${styles.barIcon}`} key={"navigationBarItem bars"}>
+              <div
+                className={`${styles.iconLink} ${styles.barIcon}`}
+                key={"navigationBarItem bars"}
+              >
                 <p onClick={() => this.barClicked()}>
                   <FontAwesomeIcon icon={["fa", "bars"]} />
                 </p>
@@ -82,11 +100,21 @@ export class NavigationBar extends React.Component {
                 .map((element, index) => {
                   return (
                     <div
-                      className={`${styles.item} ${element[1].href === this.activeUrl ? styles.activeUrl : ""}`}
+                      className={`${styles.item} ${
+                        element[1].href === this.activeUrl
+                          ? styles.activeUrl
+                          : ""
+                      }`}
                       key={"item" + element[0]}
                     >
-                      <p onClick={() => this.changePage(element[1].href || "N/A")}>
-                        {index === 0 && this.state.mobileMode ? "Homepage" : element[1].name}
+                      <p
+                        onClick={() =>
+                          this.changePage(element[1].href || "N/A")
+                        }
+                      >
+                        {index === 0 && this.state.mobileMode
+                          ? "Homepage"
+                          : element[1].name}
                       </p>
                     </div>
                   );
@@ -96,15 +124,40 @@ export class NavigationBar extends React.Component {
             .concat([
               <div className={styles.iconContainer} key="iconContainer">
                 {Object.entries(this.navigationBar)
-                  .filter((e) => e[1].type && e[1].type.toLowerCase() === "icon")
+                  .filter(
+                    (e) => e[1].type && e[1].type.toLowerCase() === "icon"
+                  )
                   .map((element) => {
                     return (
-                      <div className={`${styles.iconLink}`} key={"navigationBarItem" + element[0]}>
-                        <p onClick={() => this.changePage(element[1].href || "N/A")}>
-                          {element[0] === "email" ?
-                            <FontAwesomeIcon icon={element[1].faIconName.split(" ") || ["fas", "question"]} data-tip={element[1].tooltip} />
-                            :
-                            <FontAwesomeIcon icon={element[1].faIconName.split(" ") || ["fas", "question"]} />}
+                      <div
+                        className={`${styles.iconLink}`}
+                        key={"navigationBarItem" + element[0]}
+                      >
+                        <p
+                          onClick={() =>
+                            this.changePage(element[1].href || "N/A")
+                          }
+                        >
+                          {element[0] === "email" ? (
+                            <FontAwesomeIcon
+                              icon={
+                                element[1].faIconName.split(" ") || [
+                                  "fas",
+                                  "question",
+                                ]
+                              }
+                              data-tip={element[1].tooltip}
+                            />
+                          ) : (
+                            <FontAwesomeIcon
+                              icon={
+                                element[1].faIconName.split(" ") || [
+                                  "fas",
+                                  "question",
+                                ]
+                              }
+                            />
+                          )}
                         </p>
                       </div>
                     );

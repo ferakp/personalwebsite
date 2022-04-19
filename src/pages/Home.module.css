@@ -21,6 +21,13 @@
   display: flex;
   flex: 1 1;
   margin-top: 65px;
+  padding-left: 95px;
+  flex-direction: column;
+  margin-right: 60px;
+}
+
+.messageContainer p {
+  font-family: monospace;
 }
 
 @media only screen and (max-width: 1020px) {
@@ -31,4 +38,18 @@
   .messageContainer {
     margin-top: 15px;
   }
+}
+
+@media only screen and (max-width: 820px) {
+  .contentContainer {
+    display: none;
+  }
+}
+
+.nomargin {
+  margin: 0px;
+}
+
+.topmargin {
+  margin-top: 15px;
 }
