@@ -9,6 +9,7 @@ export class NewsList extends React.Component {
   render() {
     return (
       <div className={styles.container}>
+        <p>Latest Posts</p>
         {Object.entries(this.context.app.timeline.posts).map((e) => {
           return <Post key={e[0]} post={e} {...this.props}/>;
         })}
