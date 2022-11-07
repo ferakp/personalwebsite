@@ -94,7 +94,7 @@ export const initialState = {
           title: "Under development",
           text: `......
           `,
-          releaseTime: new Date(),
+          releaseTime: new Date("Sun Nov 06 2021 17:46:55"),
           href: "#"
         },
       ],

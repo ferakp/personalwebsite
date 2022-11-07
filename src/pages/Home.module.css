@@ -9,21 +9,23 @@
   flex-direction: row;
   flex-wrap: wrap;
   flex: 1 1;
+  padding-right: 320px;
+  padding-left: 120px;
 }
 
 .contentContainer {
   margin-top: 65px;
   display: flex;
-  flex: 1;
+  min-width: 400px;
+  margin-left: auto;
 }
 
 .messageContainer {
   display: flex;
   flex: 1 1;
   margin-top: 65px;
-  padding-left: 95px;
   flex-direction: column;
-  margin-right: 60px;
+  max-width: 1200px;
 }
 
 .messageContainer p {

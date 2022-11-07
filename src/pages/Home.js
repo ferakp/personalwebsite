@@ -10,25 +10,17 @@ export class Home extends React.Component {
     return (
       <div className={styles.container}>
         <div className={styles.messageContainer}>
-          <p>Welcome to my homepage</p>
+          <p>Welcome to my personal website</p>
 
           <p>
-            I am Feridun Akpinar, a junior web developer, interested in almost
-            everything related computer science. My website is almost like my
-            world. Here you can find anything you want, from old research
-            articles to current active projects I am still working on. Feel free
-            to touch, break and take away anything you find from this website :)
+            I am a software consultant, with background from both private and public sector. I provide consultatation,
+            expertise and solutions for small and medium sized business. Here on my personal website you can find from
+            old research articles to the active projects I am still working on. As an alumnus of the Department of Computing, the University of
+            Turku with researcher background, I am specialized on multiagent systems, knowledge graphs and data analytics. 
           </p>
-          <p>
-            If you would like to get in touch with me, I recommend using my
-            email feridun.akpinar@gmail.com.
-          </p>
-          <p className={`${styles.nomargin} ${styles.topmargin}`}>
-            Kind Regards
-          </p>
-          <p className={styles.nomargin}>
-            Feridun Akpinar
-          </p>
+          <p>If you would like to get in touch with me, please use my email feridun.akpinar@gmail.com.</p>
+          <p className={`${styles.nomargin} ${styles.topmargin}`}>Kind Regards</p>
+          <p className={styles.nomargin}>Feridun Akpinar</p>
         </div>
         <div className={styles.contentContainer}>
           <NewsList {...this.props} />
@@ -42,7 +34,9 @@ export class Home extends React.Component {
   }
 
   initializeComponent() {
-    this.updateLastVisitTime();
+    setTimeout(() => {
+      this.updateLastVisitTime();
+    }, 1000);
   }
 
   updateLastVisitTime() {
